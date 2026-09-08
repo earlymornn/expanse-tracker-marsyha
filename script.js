@@ -1,6 +1,15 @@
 const nameForm = document.getElementById("nameForm");
 const nameInput = document.getElementById("nameInput");
 const greeting = document.getElementById("greeting");
+const amountInput = document.getElementById("amountInput");
+const categoryInput = document.getElementById("categoryInput");
+const dateInput = document.getElementById("dateInput");
+const expenseSubmit = document.getElementById("expenseSubmit");
+const total = document.getElementById("total");
+const amountHistory = document.getElementById("amountHistory");
+const categoryHistory = document.getElementById("categoryHistory");
+const dateHistory = document.getElementById("dateHistory");
+const actionHistory = document.getElementById("actionHistory");
 
 function showGreeting(name) {
     greeting.textContent = `Hi, ${name}. Let's input your expense todaaay ^^`;
@@ -20,16 +29,6 @@ nameForm.addEventListener("submit", function (e) {
 
     nameInput.value = "";
 });
-
-
-const amountInput = document.getElementById("amountInput");
-const categoryInput = document.getElementById("categoryInput");
-const dateInput = document.getElementById("dateInput");
-const expenseSubmit = document.getElementById("expenseSubmit");
-const total = document.getElementById("total");
-const amountHistory = document.getElementById("amountHistory");
-const categoryHistory = document.getElementById("categoryHistory");
-const dateHistory = document.getElementById("dateHistory");
 
 let totalExpense = 0;
 
@@ -78,7 +77,25 @@ function addHistory(amount, category, date) {
     let dateParts = date.split("-");
     dateItem.textContent = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
 
+    let actionItem = document.createElement("p");
+
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", function () {
+        totalExpense -= amount;
+        total.textContent = `Total: ${totalExpense}`;
+
+        amountItem.remove();
+        categoryItem.remove();
+        dateItem.remove();
+        actionItem.remove();
+    });
+
+    actionItem.appendChild(deleteButton);
+
     amountHistory.appendChild(amountItem);
     categoryHistory.appendChild(categoryItem);
     dateHistory.appendChild(dateItem);
+    actionHistory.appendChild(actionItem);
 }
