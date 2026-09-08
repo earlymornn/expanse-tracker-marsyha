@@ -5,16 +5,17 @@
     <title>Expense Tracker - 535250148</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="container">
         <h2>Expense Tracker</h2>
     </div>
 
-    <form class="name">
-        <input type="text" placeholder="Your name">
-        <button>Send</button>
+    <form class="name" id="nameForm">
+        <input type="text" id="nameInput" placeholder="Your name">
+        <button type="submit">Send</button>
     </form>
+
+    <p id="greeting"></p>
 
     <div class="new">
         <h3>
@@ -26,12 +27,12 @@
         <p>
             Amount
         </p>
-        <input class="amount" type="text" placeholder="Type your amount (ex: 2000)">
+        <input class="amount"  id="amountInput" type="text" placeholder="Type your amount (ex: 2000)">
 
         <p>
             Category
         </p>
-        <select class="amount">
+        <select class="amount" id="categoryInput">
             <option value="">Choose category</option>
             <option value="food">Food</option>
             <option value="transport">Transport</option>
@@ -41,10 +42,10 @@
         <p>
             Date
         </p>
-        <input class="amount" type="date">
+        <input class="amount" id="dateInput" type="date">
     </div>
 
-    <button class="expensesub">Submit</button>
+    <button class="expensesub" id="expenseSubmit">Submit</button>
 </body>
 
 <body>
@@ -54,8 +55,8 @@
         </h2>
     </div>
 
-    <h4>
-        Total
+    <h4 id="total">
+        Total: 0
     </h4>
 
 
@@ -68,15 +69,20 @@
     <section class="content">
         <article>
             <h1>Amount</h1>
+            <div id="amountHistory"></div>
         </article>
 
         <article>
             <h1>Category</h1>
+            <div id="categoryHistory"></div>
         </article>
 
         <article>
             <h1>Date</h1>
+            <div id="dateHistory"></div>
         </article>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
