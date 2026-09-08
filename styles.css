@@ -35,6 +35,15 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+h1 {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: rgb(116, 52, 107);
+    text-align: left;
+    margin-left: 30px;
+}
+
 h2 {
     font-family: "Times New Roman", Georgia, serif;
     font-size: xx-large;
@@ -124,4 +133,13 @@ article {
 
 article:last-child {
     border-right: none;
+}
+
+.p2 {
+    font-size: large;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 30px;
 }
